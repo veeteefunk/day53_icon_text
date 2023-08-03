@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: lightskyblue;
+}
+
+.navigation {
+    position: relative;
+    width: 210px;
+    height: 70px;
+}
+
+.navigation ul {
+    display: flex;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+}
+
+.navigation ul li a i {
+    position: relative;
+    line-height: 75px;
+    transition: 0.5s;
+    font-size: 30px;
+}
+
+.navigation ul li.active a i {
+    font-size: 20px;
+    transform: translateY(-6px);
+}
+
+.navigation ul li a .text {
+    position: absolute;
+    font-size: 12px;
+    color: #fff;
+    bottom: 20px;
+    font-weight: 400;
+    transition: 0.25s;
+    transform: scale(0);
+    text-transform: uppercase;
+}
+
+.navigation ul li.active a .text {
+    transform: scale(1);
+}
+
+.indicator {
+    position: absolute;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    /* background-color: #f00; */
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+    background: rgb(91, 14, 91);
+    box-shadow: 0 15px 25px rgb(91, 14, 91);
+    transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator {
+    background: darkblue;
+    box-shadow: 0 15px 25px darkblue;
+    transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator {
+    background: darkgreen;
+    box-shadow: 0 15px 25px darkgreen;
+    transform: translateX(calc(70px * 2));
+}
